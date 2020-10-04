@@ -45,6 +45,14 @@ const routes = [
       showTabbar: true,
     }
   },
+  {
+    path: '/Login',
+    name: 'Login',
+    component: () => import('../views/main/Login.vue'),
+    meta: {
+      showTabbar: false,
+    }
+  }
 ]
 
 const router = new VueRouter({
@@ -53,5 +61,16 @@ const router = new VueRouter({
   routes
 })
 
-
-export default router
+export default router;
+router.beforeEach((to, from, next) => {
+  var TOKEN = localStorage.getItem('token')
+  if (to.name == 'Login' || to.name == 'SmsLogin' || to.name == 'Username') {
+    next()
+  } else {
+    if (TOKEN) {
+      next()
+    } else {
+      next('/login')
+    }
+  }
+})
