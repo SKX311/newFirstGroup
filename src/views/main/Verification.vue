@@ -10,11 +10,11 @@
         <input type="text" placeholder="请输入手机号" v-model="username" />
       </div>
       <div class="inp">
-        <input type="password" placeholder="请输入密码" v-model="password" />
+        <input type="password" placeholder="请输入短信验证码" v-model="password" />
       </div>
       <div class="container_password">
-        <span @click="$router.push('/RetrievePassword')">找回密码</span>
-        <span @click="$router.push('/Verification')">注册/验证码登录</span>
+        <span @click="$router.push('/RetrievePassword')">*未注册的手机号将会自动注册</span>
+        <span @click="$router.go(-1)">注册/验证码登录</span>
       </div>
       <div class="container_button">
         <van-button
