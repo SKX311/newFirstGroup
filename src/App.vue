@@ -15,7 +15,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style scoped>
 * {
   font-size: 0.24rem;
 }
@@ -25,4 +25,5 @@
 .van-tabbar-item--active{
   color: #FF6B00 !important;
 }
+
 </style>
