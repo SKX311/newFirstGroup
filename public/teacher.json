@@ -1,0 +1,25 @@
+{
+    "data":
+    [
+        {
+            "id":"1",
+            "img":"http://localhost:8080/img/teacher01.png",
+            "title":"杨德胜",
+            "introduce":"杨老师，特级教师，多次被中国教学会评为全国高级教师"
+        },
+        {
+            "id":"2",
+            "img":"http://localhost:8080/img/teacher02.jpg",
+            "title":"文卫星",
+            "introduce":"文老师，特级教师，多次被中国教学会评为全国高级教师"
+        },
+        {
+            "id":"3",
+            "img":"http://localhost:8080/img/teacher03.png",
+            "title":"马学斌",
+            "introduce":"马老师，特级教师，多次被中国教学会评为全国高级教师"
+        }
+        
+    ]
+    
+}

@@ -14,6 +14,26 @@ const routes = [
     }
   },
   {
+    path: '/Coach',
+    name: 'Coach',
+    component: () => import('../views/home/Coach.vue'),
+  },
+  {
+    path: '/Calendar',
+    name: 'Calendar',
+    component: () => import('../views/home/Calendar.vue'),
+  },
+  {
+    path: '/Feedback',
+    name: 'Feedback',
+    component: () => import('../views/home/Feedback.vue'),
+  },
+  {
+    path: '/TeacherDetails',
+    name: 'TeacherDetails',
+    component: () => import('../views/home/TeacherDetails.vue'),
+  },
+  {
     path: '/CourseHome',
     name: 'CourseHome',
     component: () => import('../views/course/CourseHome.vue'),
@@ -36,6 +56,11 @@ const routes = [
     meta: {
       showTabbar: true,
     }
+  },
+  {
+    path: '/MessageNotificatio',
+    name: 'MessageNotificatio',
+    component: () => import('../views/home/MessageNotificatio.vue'),
   },
   {
     path: '/RecordHome',
