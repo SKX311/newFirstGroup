@@ -35,7 +35,7 @@
           </van-dropdown-menu>
         </van-col>
         <van-col span="8"
-          ><span class="menu_s1"
+          ><span class="menu_s1" @click="gg"
             ><i class="el-icon-copy-document"></i> 巩固全部错题</span
           ></van-col
         >
@@ -83,6 +83,11 @@ export default {
     changeindex(index) {
       console.log(index);
       this.active = index;
+    },
+    gg() {
+      this.$router.push({
+        path: "/gg",
+      });
     },
   },
 };

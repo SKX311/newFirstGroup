@@ -14,6 +14,26 @@ const routes = [
     }
   },
   {
+    path: '/Coach',
+    name: 'Coach',
+    component: () => import('../views/home/Coach.vue'),
+  },
+  {
+    path: '/Calendar',
+    name: 'Calendar',
+    component: () => import('../views/home/Calendar.vue'),
+  },
+  {
+    path: '/Feedback',
+    name: 'Feedback',
+    component: () => import('../views/home/Feedback.vue'),
+  },
+  {
+    path: '/TeacherDetails',
+    name: 'TeacherDetails',
+    component: () => import('../views/home/TeacherDetails.vue'),
+  },
+  {
     path: '/CourseHome',
     name: 'CourseHome',
     component: () => import('../views/course/CourseHome.vue'),
@@ -36,6 +56,11 @@ const routes = [
     meta: {
       showTabbar: true,
     }
+  },
+  {
+    path: '/MessageNotificatio',
+    name: 'MessageNotificatio',
+    component: () => import('../views/home/MessageNotificatio.vue'),
   },
   {
     path: '/RecordHome',
@@ -139,7 +164,14 @@ const routes = [
         component: () => import('../views/exercise/practice_item/english.vue'),
       }
     ]
-  },
+  },{
+    path: '/Login',
+    name: 'Login',
+    component: () => import('../views/main/Login.vue'),
+    meta: {
+      showTabbar: false,
+    }
+  }
 ]
 
 const router = new VueRouter({
@@ -148,5 +180,16 @@ const router = new VueRouter({
   routes
 })
 
-
-export default router
+export default router;
+router.beforeEach((to, from, next) => {
+  var TOKEN = localStorage.getItem('token')
+  if (to.name == 'Login' || to.name == 'SmsLogin' || to.name == 'Username') {
+    next()
+  } else {
+    if (TOKEN) {
+      next()
+    } else {
+      next('/login')
+    }
+  }
+})
