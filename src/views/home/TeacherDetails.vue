@@ -5,7 +5,7 @@
         <p @click="back"><van-icon name="arrow-left" /></p>
         <p class="onetoone">讲师详情</p>
       </header>
-      <div class="famous_one" @click="make">
+      <div class="famous_one">
         <p class="famous_one_tu">
           <img src="http://localhost:8080/img/teacher01.png" alt="" />
         </p>
@@ -14,7 +14,8 @@
           <p class="famous_introduce">男 30年教龄</p>
         </div>
         <div class="famous_three">
-          <button @click="make">关注</button>
+          <button @click="Toast" v-show="Show">关注</button>
+          <p v-show="isShow" @click="clear">已关注</p>
         </div>
       </div>
     </div>
@@ -189,7 +190,7 @@
       </van-tab>
     </van-tabs>
     
-    <van-button color="#EB6100" @click="toClass_item">立即预约</van-button>
+    <van-button color="#EB6100">立即预约</van-button>
   </div>
 </template>
 
@@ -198,6 +199,8 @@ export default {
   data() {
     return {
       list: ["讲师介绍", "主讲课程", "学员评价"],
+      Show: true,
+      isShow: false,
     };
   },
   methods: {
@@ -207,7 +210,17 @@ export default {
 
       back(){
           this.$router.go(-1)
-      }
+      },
+      Toast() {
+      this.$toast.success("已关注");
+      this.Show = false;
+      this.isShow = true;
+    },
+    clear() {
+      this.$toast.success("已取消");
+      this.Show = true;
+      this.isShow = false;
+    },
   
   },
 };
@@ -477,6 +490,11 @@ export default {
 }
 .van-button__text {
   font-size: 0.33rem;
+}
+
+.van-toast {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
 }
 
 </style>

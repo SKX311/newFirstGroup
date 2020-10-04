@@ -33,30 +33,12 @@
     <div class="bottom">
       <div class="famous">
         <p class="famous_content"><span>名师阵容</span></p>
-        <div class="famous_one" @click="toTeacherDetail">
-          <img src="http://localhost:8080/img/teacher01.png" alt="" />
+        <div class="famous_one" @click="toTeacherDetail" v-for="(item,index) in list" :key="index">
+          <img :src="item.img" alt="" />
           <div class="famous_two">
-            <p class="famous_name">杨德胜</p>
+            <p class="famous_name">{{item.title}}</p>
             <p class="famous_introduce">
-              杨老师，特级教师，多次被中国教学会评为全国高级教师
-            </p>
-          </div>
-        </div>
-        <div class="famous_one" @click="toTeacherDetail">
-          <img src="http://localhost:8080/img/teacher02.jpg" alt="" />
-          <div class="famous_two">
-            <p class="famous_name">文卫星</p>
-            <p class="famous_introduce">
-              文老师，特级教师，多次被中国教学会评为全国高级教师
-            </p>
-          </div>
-        </div>
-        <div class="famous_one" @click="toTeacherDetail">
-          <img src="http://localhost:8080/img/teacher03.png" alt="" />
-          <div class="famous_two">
-            <p class="famous_name">马学斌</p>
-            <p class="famous_introduce">
-              马老师，特级教师，多次被中国教学会评为全国高级教师
+              {{item.introduce}}
             </p>
           </div>
         </div>
@@ -387,6 +369,12 @@
 
 <script>
 export default {
+  data(){
+    return{
+      list:[],
+      listtwo:[],
+    }
+  },
 
   methods:{
     toCoach(){
@@ -401,6 +389,16 @@ export default {
       toCalendar(){
         this.$router.push({path:"/Calendar"})
       }
+  },
+  mounted(){
+    this.$axios.get("teacher.json").then((res)=>{
+      console.log(res);
+      this.list=res.data.data
+    }),
+    this.$axios.get("teacher1.json").then((res)=>{
+      console.log(res);
+      this.listtwo=res.data.data
+    })
   }
 };
 </script>
