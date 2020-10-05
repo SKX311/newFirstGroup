@@ -170,7 +170,35 @@ const routes = [
     component: () => import('../views/main/Login.vue'),
     meta: {
       showTabbar: false,
+<<<<<<< HEAD
     },
+=======
+    }
+  },
+  {
+    path: '/RetrievePassword',
+    name: 'RetrievePassword',
+    component: () => import('../views/main/RetrievePassword.vue'),
+    meta: {
+      showTabbar: false,
+    }
+  },
+  {
+    path: '/Verification',
+    name: 'Verification',
+    component: () => import('../views/main/Verification.vue'),
+    meta: {
+      showTabbar: false,
+    }
+  },
+  {
+    path: '/My',
+    name: 'My',
+    component: () => import('../views/main/My.vue'),
+    meta: {
+      showTabbar: false,
+    }
+>>>>>>> 3cef59b40da7ca70abf94039d91cc620eb446195
   }
 
 ]
@@ -185,7 +213,7 @@ const router = new VueRouter({
 export default router;
 router.beforeEach((to, from, next) => {
   var TOKEN = localStorage.getItem('token')
-  if (to.name == 'Login' || to.name == 'SmsLogin' || to.name == 'Username') {
+  if (to.name == 'Login' || to.name == 'Verification' || to.name == 'RetrievePassword') {
     next()
   } else {
     if (TOKEN) {
@@ -195,3 +223,6 @@ router.beforeEach((to, from, next) => {
     }
   }
 })
+
+
+// 
