@@ -106,7 +106,11 @@
 
 <script>
 export default {
-
+methods:{
+     make(){
+          this.$router.push({path:"/class_item"})
+        },
+}
 }
 </script>
 

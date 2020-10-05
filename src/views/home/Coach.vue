@@ -22,9 +22,7 @@ export default {
             this.$router.go(-1)
         },
        
-        make(){
-          this.$router.push({path:"/class_item"})
-        },
+       
         toSearch(){
           this.$router.push({path:"/Search"})
         },
