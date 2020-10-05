@@ -3,16 +3,16 @@
     <div class="banner_top">
       <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
         <van-swipe-item
-          ><img src="http://localhost:8080/img/banner01.jpg" alt=""
+          ><img src="http://localhost:8080/img/banner01.jpg"
         /></van-swipe-item>
         <van-swipe-item
-          ><img src="http://localhost:8080/img/banner02.jpg" alt=""
+          ><img src="http://localhost:8080/img/banner02.jpg"
         /></van-swipe-item>
         <van-swipe-item
-          ><img src="http://localhost:8080/img/banner03.jpg" alt=""
+          ><img src="http://localhost:8080/img/banner03.jpg"
         /></van-swipe-item>
         <van-swipe-item
-          ><img src="http://localhost:8080/img/banner04.jpg" alt=""
+          ><img src="http://localhost:8080/img/banner04.jpg"
         /></van-swipe-item>
       </van-swipe>
     </div>
@@ -33,12 +33,17 @@
     <div class="bottom">
       <div class="famous">
         <p class="famous_content"><span>名师阵容</span></p>
-        <div class="famous_one" @click="toTeacherDetail" v-for="(item,index) in list" :key="index">
+        <div
+          class="famous_one"
+          @click="toTeacherDetail"
+          v-for="(item, index) in list"
+          :key="index"
+        >
           <img :src="item.img" alt="" />
           <div class="famous_two">
-            <p class="famous_name">{{item.title}}</p>
+            <p class="famous_name">{{ item.title }}</p>
             <p class="famous_introduce">
-              {{item.introduce}}
+              {{ item.introduce }}
             </p>
           </div>
         </div>
@@ -307,7 +312,7 @@
           </div>
         </div>
       </div>
-       <div class="star_lecturer">
+      <div class="star_lecturer">
         <div class="famous_one" @click="toTeacherDetail">
           <img src="http://localhost:8080/img/teacher04.jpg" alt="" />
           <div class="famous_two">
@@ -318,7 +323,7 @@
           </div>
         </div>
       </div>
-       <div class="star_lecturer">
+      <div class="star_lecturer">
         <div class="famous_one" @click="toTeacherDetail">
           <img src="http://localhost:8080/img/teacher04.jpg" alt="" />
           <div class="famous_two">
@@ -329,7 +334,7 @@
           </div>
         </div>
       </div>
-       <div class="star_lecturer">
+      <div class="star_lecturer">
         <div class="famous_one" @click="toTeacherDetail">
           <img src="http://localhost:8080/img/teacher04.jpg" alt="" />
           <div class="famous_two">
@@ -340,7 +345,7 @@
           </div>
         </div>
       </div>
-       <div class="star_lecturer">
+      <div class="star_lecturer">
         <div class="famous_one" @click="toTeacherDetail">
           <img src="http://localhost:8080/img/teacher04.jpg" alt="" />
           <div class="famous_two">
@@ -351,7 +356,7 @@
           </div>
         </div>
       </div>
-       <div class="star_lecturer">
+      <div class="star_lecturer">
         <div class="famous_one" @click="toTeacherDetail">
           <img src="http://localhost:8080/img/teacher04.jpg" alt="" />
           <div class="famous_two">
@@ -369,37 +374,37 @@
 
 <script>
 export default {
-  data(){
-    return{
-      list:[],
-      listtwo:[],
-    }
+  data() {
+    return {
+      list: [],
+      listtwo: [],
+    };
   },
 
-  methods:{
-    toCoach(){
-          this.$router.push({path:"/Coach"})
-      },
-      toTeacherDetail(){
-          this.$router.push({path:"/TeacherDetails"})
-      },
-      toCourse(){
-        this.$router.push({path:"/MessageNotificatio"})
-      },
-      toCalendar(){
-        this.$router.push({path:"/Calendar"})
-      }
+  methods: {
+    toCoach() {
+      this.$router.push({ path: "/Coach" });
+    },
+    toTeacherDetail() {
+      this.$router.push({ path: "/TeacherDetails" });
+    },
+    toCourse() {
+      this.$router.push({ path: "/MessageNotificatio" });
+    },
+    toCalendar() {
+      this.$router.push({ path: "/Calendar" });
+    },
   },
-  mounted(){
-    this.$axios.get("teacher.json").then((res)=>{
+  mounted() {
+    this.$axios.get("teacher.json").then((res) => {
       console.log(res);
-      this.list=res.data.data
+      this.list = res.data.data;
     }),
-    this.$axios.get("teacher1.json").then((res)=>{
-      console.log(res);
-      this.listtwo=res.data.data
-    })
-  }
+      this.$axios.get("teacher1.json").then((res) => {
+        console.log(res);
+        this.listtwo = res.data.data;
+      });
+  },
 };
 </script>
 
@@ -717,7 +722,7 @@ export default {
 
         .famous_name {
           font-size: 0.3rem;
-          span{
+          span {
             display: inline-block;
             margin-left: 2px;
             color: #ea7a2f;
@@ -730,7 +735,7 @@ export default {
           -webkit-line-clamp: 1;
           overflow: hidden;
           margin-top: -7px;
-          color: #B7B7B7;
+          color: #b7b7b7;
         }
       }
     }
