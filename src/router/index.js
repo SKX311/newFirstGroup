@@ -170,11 +170,9 @@ const routes = [
     component: () => import('../views/main/Login.vue'),
     meta: {
       showTabbar: false,
-<<<<<<< HEAD
     },
-=======
-    }
-  },
+    },
+
   {
     path: '/RetrievePassword',
     name: 'RetrievePassword',
@@ -198,7 +196,6 @@ const routes = [
     meta: {
       showTabbar: false,
     }
->>>>>>> 3cef59b40da7ca70abf94039d91cc620eb446195
   }
 
 ]
