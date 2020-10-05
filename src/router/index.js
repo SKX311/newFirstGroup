@@ -71,6 +71,7 @@ const routes = [
     }
   },
   {
+<<<<<<< HEAD
     path: '/centre',
     name: 'centre',
     component: () => import('../views/exercise/practice_item/centre.vue'),
@@ -268,6 +269,22 @@ const routes = [
       showTabbar: false,
     }
   }
+=======
+    path: '/Coachone',
+    name: 'Coachone',
+    component: () => import('../views/record/Coachone.vue'),
+  },
+  {
+    path: '/Coachtwo',
+    name: 'Coachtwo',
+    component: () => import('../views/record/Coachtwo.vue'),
+  },
+  {
+    path: '/class_item',
+    name: 'class_item',
+    component: () => import('../views/record/class_item.vue'),
+  },
+>>>>>>> 5f9567d85f231f103db5ea2286776526eb8aaf92
 ]
 
 const router = new VueRouter({
