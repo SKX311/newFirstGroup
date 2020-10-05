@@ -99,7 +99,8 @@ export default {
   height: 1rem;
   font-size: 0.28rem;
 
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #f5f5f5;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,7 +110,8 @@ export default {
   height: 1rem;
   font-size: 0.28rem;
 
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #f5f5f5;
+
   display: flex;
   color: #eb6100;
   align-items: center;

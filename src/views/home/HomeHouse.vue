@@ -2,22 +2,13 @@
   <div class="home">
     <div class="banner_top">
       <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-        <van-swipe-item
-          ><img src="http://localhost:8080/img/banner01.jpg" alt=""
-        /></van-swipe-item>
-        <van-swipe-item
-          ><img src="http://localhost:8080/img/banner02.jpg" alt=""
-        /></van-swipe-item>
-        <van-swipe-item
-          ><img src="http://localhost:8080/img/banner03.jpg" alt=""
-        /></van-swipe-item>
-        <van-swipe-item
-          ><img src="http://localhost:8080/img/banner04.jpg" alt=""
+        <van-swipe-item v-for="(item, index) in banner" :key="index"
+          ><img :src="item.banner_img"
         /></van-swipe-item>
       </van-swipe>
     </div>
     <div class="center">
-      <div @click="toCourse">
+      <div @click="toCourseHome">
         <img src="http://localhost:8080/img/center1.png" alt="" />
         <p>特色课</p>
       </div>
@@ -32,13 +23,18 @@
     </div>
     <div class="bottom">
       <div class="famous">
-        <p class="famous_content"><span>名师阵容</span></p>
-        <div class="famous_one" @click="toTeacherDetail" v-for="(item,index) in list" :key="index">
-          <img :src="item.img" alt="" />
+        <p class="famous_content"><span>明星讲师</span></p>
+        <div
+          class="famous_one"
+          @click="toTeacherDetail"
+          v-for="(item, index) in famousList"
+          :key="index"
+        >
+          <img :src="item.teacher_avatar" alt="" />
           <div class="famous_two">
-            <p class="famous_name">{{item.title}}</p>
+            <p class="famous_name">{{ item.teacher_name }}</p>
             <p class="famous_introduce">
-              {{item.introduce}}
+              {{ item.introduction }}
             </p>
           </div>
         </div>
@@ -285,18 +281,18 @@
 
       <!-- 明星讲师 -->
       <div class="star_lecturer">
-        <p class="star_lecturer_content"><span>明星讲师</span></p>
-        <div class="famous_one" @click="toTeacherDetail">
-          <img src="http://localhost:8080/img/teacher04.jpg" alt="" />
+        <p class="star_lecturer_content"><span>名师阵容</span></p>
+        <div class="famous_one" @click="toTeacherDetail" v-for="(item,index) in starList" :key="index">
+          <img :src="item.teacher_avatar" alt="" />
           <div class="famous_two">
-            <p class="famous_name">杨老师 <span>M10</span></p>
+            <p class="famous_name">{{item.teacher_name}} <span>M10</span></p>
             <p class="famous_introduce">
-              杨老师，特级教师，多次被中国教学会评为全国高级教师
+              {{item.introduction}}
             </p>
           </div>
         </div>
       </div>
-      <div class="star_lecturer">
+      <!-- <div class="star_lecturer">
         <div class="famous_one" @click="toTeacherDetail">
           <img src="http://localhost:8080/img/teacher04.jpg" alt="" />
           <div class="famous_two">
@@ -307,7 +303,7 @@
           </div>
         </div>
       </div>
-       <div class="star_lecturer">
+      <div class="star_lecturer">
         <div class="famous_one" @click="toTeacherDetail">
           <img src="http://localhost:8080/img/teacher04.jpg" alt="" />
           <div class="famous_two">
@@ -318,7 +314,7 @@
           </div>
         </div>
       </div>
-       <div class="star_lecturer">
+      <div class="star_lecturer">
         <div class="famous_one" @click="toTeacherDetail">
           <img src="http://localhost:8080/img/teacher04.jpg" alt="" />
           <div class="famous_two">
@@ -329,7 +325,7 @@
           </div>
         </div>
       </div>
-       <div class="star_lecturer">
+      <div class="star_lecturer">
         <div class="famous_one" @click="toTeacherDetail">
           <img src="http://localhost:8080/img/teacher04.jpg" alt="" />
           <div class="famous_two">
@@ -340,7 +336,7 @@
           </div>
         </div>
       </div>
-       <div class="star_lecturer">
+      <div class="star_lecturer">
         <div class="famous_one" @click="toTeacherDetail">
           <img src="http://localhost:8080/img/teacher04.jpg" alt="" />
           <div class="famous_two">
@@ -351,7 +347,7 @@
           </div>
         </div>
       </div>
-       <div class="star_lecturer">
+      <div class="star_lecturer">
         <div class="famous_one" @click="toTeacherDetail">
           <img src="http://localhost:8080/img/teacher04.jpg" alt="" />
           <div class="famous_two">
@@ -361,51 +357,57 @@
             </p>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="dibu"></div>
   </div>
 </template>
 
 <script>
+import { getBanner, getFamousList } from "../../api/api.js";
 export default {
-  data(){
-    return{
-      list:[],
-      listtwo:[],
-    }
+  data() {
+    return {
+      list: [],
+      listtwo: [],
+      banner: [],
+      famousList:[],
+      starList:[]
+    };
   },
 
-  methods:{
-    toCoach(){
-          this.$router.push({path:"/Coach"})
-      },
-      toTeacherDetail(){
-          this.$router.push({path:"/TeacherDetails"})
-      },
-      toCourse(){
-        this.$router.push({path:"/MessageNotificatio"})
-      },
-      toCalendar(){
-        this.$router.push({path:"/Calendar"})
-      },
-      toCourse(){
-        this.$router.push({path:"/Course"})
-      },
-      toClass_item(){
-        this.$router.push({path:"/CourseDetails"})
-      }
+  methods: {
+    toCoach() {
+      this.$router.push({ path: "/Coach" });
+    },
+    toTeacherDetail() {
+      this.$router.push({ path: "/TeacherDetails" });
+    },
+    toCourse() {
+      this.$router.push({ path: "/MessageNotificatio" });
+    },
+    toCalendar() {
+      this.$router.push({ path: "/Calendar" });
+    },
+    toCourseHome() {
+      this.$router.push({ path: "/CourseHome" });
+    },
+    toClass_item() {
+      this.$router.push({ path: "/CourseDetails" });
+    },
   },
-  mounted(){
-    this.$axios.get("teacher.json").then((res)=>{
-      console.log(res);
-      this.list=res.data.data
-    }),
-    this.$axios.get("teacher1.json").then((res)=>{
-      console.log(res);
-      this.listtwo=res.data.data
-    })
-  }
+
+  async mounted() {
+    var a = await getBanner();
+    console.log(a);
+    this.banner = a.data.data;
+
+    var b =await getFamousList();
+    console.log(b.data.data);
+    console.log(b.data.data[4].list);
+    this.famousList=b.data.data[0].list
+    this.starList=b.data.data[4].list
+  },
 };
 </script>
 
@@ -723,7 +725,7 @@ export default {
 
         .famous_name {
           font-size: 0.3rem;
-          span{
+          span {
             display: inline-block;
             margin-left: 2px;
             color: #ea7a2f;
@@ -736,7 +738,7 @@ export default {
           -webkit-line-clamp: 1;
           overflow: hidden;
           margin-top: -7px;
-          color: #B7B7B7;
+          color: #b7b7b7;
         }
       }
     }
