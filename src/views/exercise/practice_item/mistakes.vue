@@ -128,7 +128,8 @@ export default {
 .one_option {
   width: 100%;
   height: 1rem;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #f5f5f5;
+
   display: flex;
   align-items: center;
   font-size: 0.28rem;
@@ -138,7 +139,8 @@ export default {
 .one_option_active {
   width: 100%;
   height: 1rem;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #f5f5f5;
+
   display: flex;
   color: #eb6100;
   font-size: 0.28rem;

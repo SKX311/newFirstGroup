@@ -170,8 +170,9 @@ const routes = [
     component: () => import('../views/main/Login.vue'),
     meta: {
       showTabbar: false,
-    }
-  },
+    },
+    },
+
   {
     path: '/RetrievePassword',
     name: 'RetrievePassword',
@@ -196,14 +197,16 @@ const routes = [
       showTabbar: false,
     }
   },
-  {
+{
+  
     path: '/Collect',
     name: 'Collect',
     component: () => import('../views/main/Collect.vue'),
     meta: {
       showTabbar: false,
     }
-  },
+ 
+},
   {
     path: '/Course',
     name: 'Course',
@@ -311,6 +314,7 @@ const routes = [
     component: () => import("../views/course/Studycardexchange.vue")
   },
 ]
+
 
 const router = new VueRouter({
   mode: 'history',

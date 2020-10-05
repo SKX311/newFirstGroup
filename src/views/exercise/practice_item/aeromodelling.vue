@@ -114,12 +114,14 @@ export default {
   height: 1rem;
   font-size: 0.28rem;
 
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .one_option_active {
+  border-bottom: 1px solid #f5f5f5;
+
   width: 100%;
   height: 1rem;
   font-size: 0.28rem;

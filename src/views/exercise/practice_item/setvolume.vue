@@ -48,6 +48,7 @@
       </van-dropdown-item>
       <van-dropdown-item title="套卷状态">
         <div
+          close-on-click-overlay="true"
           :class="['one_option', { one_option_active: active === index }]"
           v-for="(item, index) in list2"
           :key="index"
@@ -96,13 +97,13 @@ export default {
       this.index = key;
     },
     go(str) {
-      console.log(str);
+      // console.log(str);
       this.$router.push({
         path: str,
       });
     },
     changeindex(index) {
-      console.log(index);
+      // console.log(index);
       this.active = index;
     },
   },
@@ -130,7 +131,8 @@ export default {
   width: 100%;
   height: 1rem;
   font-size: 0.28rem;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #f5f5f5;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,7 +142,8 @@ export default {
   height: 1rem;
   font-size: 0.28rem;
 
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #f5f5f5;
+
   display: flex;
   color: #eb6100;
   align-items: center;
