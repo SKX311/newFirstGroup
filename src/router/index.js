@@ -71,7 +71,6 @@ const routes = [
     }
   },
   {
-<<<<<<< HEAD
     path: '/centre',
     name: 'centre',
     component: () => import('../views/exercise/practice_item/centre.vue'),
@@ -165,7 +164,7 @@ const routes = [
         component: () => import('../views/exercise/practice_item/english.vue'),
       }
     ]
-  },{
+  }, {
     path: '/Login',
     name: 'Login',
     component: () => import('../views/main/Login.vue'),
@@ -268,8 +267,8 @@ const routes = [
     meta: {
       showTabbar: false,
     }
-  }
-=======
+  },
+  {
     path: '/Coachone',
     name: 'Coachone',
     component: () => import('../views/record/Coachone.vue'),
@@ -284,7 +283,33 @@ const routes = [
     name: 'class_item',
     component: () => import('../views/record/class_item.vue'),
   },
->>>>>>> 5f9567d85f231f103db5ea2286776526eb8aaf92
+  {
+    path: "/CourseDetails",
+    name: "CourseDetails",
+    component: () => import("../views/course/CourseDetails.vue")
+  }, {
+    path: "/Learnnow",
+    name: "Learnnow",
+    component: () => import("../views/course/Learnnow.vue")
+  },
+  {
+    path: "/Preferentialboxing",
+    name: "Preferentialboxing",
+    component: () => import("../views/course/Preferentialboxing.vue")
+  }, {
+    path: "/Studycard",
+    name: "Studycard",
+    component: () => import("../views/course/Studycard.vue")
+  }, {
+    path: "/member",
+    name: "member",
+    component: () => import("../views/course/member.vue")
+  },
+  {
+    path: "/Studycardexchange",
+    name: "Studycardexchange",
+    component: () => import("../views/course/Studycardexchange.vue")
+  },
 ]
 
 const router = new VueRouter({
@@ -306,7 +331,3 @@ router.beforeEach((to, from, next) => {
     }
   }
 })
-
-
-// 
- 
