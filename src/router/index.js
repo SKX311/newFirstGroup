@@ -223,6 +223,79 @@ const routes = [
   },
   
 {
+  
+    path: '/Collect',
+    name: 'Collect',
+    component: () => import('../views/main/Collect.vue'),
+    meta: {
+      showTabbar: false,
+    }
+  },
+  {
+    path: '/Course',
+    name: 'Course',
+    component: () => import('../views/main/Course.vue'),
+    meta: {
+      showTabbar: false,
+    }
+  },
+  {
+    path: '/Money',
+    name: 'Money',
+    component: () => import('../views/main/Money.vue'),
+    meta: {
+      showTabbar: false,
+    }
+  },
+  {
+    path: '/MoneySize',
+    name: 'MoneySize',
+    component: () => import('../views/main/MoneySize.vue'),
+    meta: {
+      showTabbar: false,
+    }
+  },
+  {
+    path: '/Order',
+    name: 'Order',
+    component: () => import('../views/main/Order.vue'),
+    meta: {
+      showTabbar: false,
+    }
+  },
+  {
+    path: '/Vip',
+    name: 'Vip',
+    component: () => import('../views/main/Vip.vue'),
+    meta: {
+      showTabbar: false,
+    }
+  },
+  {
+    path: '/UserLearn',
+    name: 'UserLearn',
+    component: () => import('../views/main/UserLearn.vue'),
+    meta: {
+      showTabbar: false,
+    }
+  },
+  {
+    path: '/Teacher',
+    name: 'Teacher',
+    component: () => import('../views/main/Teacher.vue'),
+    meta: {
+      showTabbar: false,
+    }
+  },
+  {
+    path: '/Intercalate',
+    name: 'Intercalate',
+    component: () => import('../views/main/Intercalate.vue'),
+    meta: {
+      showTabbar: false,
+    }
+  },
+  {
     path: '/Coachone',
     name: 'Coachone',
     component: () => import('../views/record/Coachone.vue'),
@@ -237,6 +310,7 @@ const routes = [
     name: 'class_item',
     component: () => import('../views/record/class_item.vue'),
   },
+
 ]
 
 
@@ -262,3 +336,4 @@ router.beforeEach((to, from, next) => {
 
 
 // 
+ 
