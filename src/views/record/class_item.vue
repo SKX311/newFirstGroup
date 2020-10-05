@@ -9,7 +9,8 @@
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAPCAYAAADd/14OAAAA/ElEQVQoU33RsUvWYRTF8c8hQmgIE4e2IFDQIfCPcHGIlBpqcWtPcFHBFgWdHGxykURxUtfWZkfHtkZBCBzcrjzxe+P9ha/P9sD33nPuOfHIq6pJnOBZRnFVNYdzvML+g2BVfcIBnuJLkm89sKqeYAcruMaHJD+b6j+wqiZwinlcYinJ74G1v2BVven8vMYRPie5G/afqnqPQ4xhNcneQwc28AYvsJ1kfVQKDVzAMZ5jE1tJ6v+BgcdpXGAGZ1hOctvzOPhUVdvYDnmLKywm+dW7eghuCl+xgT/4mORHL8dhmap6h++tY6wl2X2s69nO91SLbyTYFTHebX55D93jTsSH0JDDAAAAAElFTkSuQmCC"
           />
         </div>
-        <div style="color: white; width: 5rem; text-align: center">
+        <div style="color: white; width: 5rem; text-align: center;
+        font-size:0.4rem">
           预约课程
         </div>
         <div></div>
@@ -22,12 +23,15 @@
         />
 
         <div>
-          <p style="font-size: 14px">杨德胜</p>
-          <p style="font-size: 12px">
-            <span style="font-size: 14px; color:#b7b7b7">男</span>
+          <div style="height:0.25rem">
+
+          </div>
+          <div style="font-size: 0.3rem">杨德胜</div>
+          
+            <span style="font-size: 0.3rem; color:#b7b7b7">男</span>
             &nbsp;&nbsp;
-            <span style="font-size: 12px; color:#b7b7b7">30年教龄</span>
-          </p>
+            <span style="font-size: 0.16rem; color:#b7b7b7">30年教龄</span>
+          
         </div>
 
         <div class="buss">
@@ -36,6 +40,7 @@
             style="
               border: 1px solid #eb6100;
               font-size: 10px;
+              font-size: 0.25rem;
               color: #eb6100;
               border-radius: 25px;
             "
@@ -50,9 +55,9 @@
       <p class="back_p">
         <b style="color: #eb6100">|</b>
         &nbsp;&nbsp;
-        <span style="font-size: 16px; color: #595959"
+        <span style="font-size:0.3rem; color: #595959"
           >选择时间<span
-            style="font-size: 15px; padding-left: 0.2rem; color: #595959"
+            style="font-size: 0.27rem; padding-left: 0.2rem; color: #595959"
             >(北京时间)</span
           ></span
         >
@@ -71,10 +76,10 @@
 
       <div class="back_imgz">
         <img class="iii" src="https://wap.365msmk.com/img/empty.0d284c2e.png" />
-        <p style="font-size: 16px; color: #595959">暂无信息</p>
+        <p style="font-size: 0.3rem; color: #595959">暂无信息</p>
       </div>
     </div>
-    <van-button color="rgb(235,97,0)" block>立即预约</van-button>
+    <van-button color="rgb(235,97,0)" block style="font-size: 12px;">立即预约</van-button>
   </div>
 </template>
 
@@ -133,7 +138,7 @@ export default {
   width: 1rem;
   height: 1rem;
   /* border: 1px solid red; */
-  font-size: 13px;
+  font-size: 0.25rem;
   text-align: center;
   flex-wrap: wrap;
   flex-direction: column;
@@ -172,7 +177,7 @@ export default {
   line-height: 1.2rem;
 }
 .buss {
-  padding-left: 2.8rem;
+  padding-left: 2.2rem;
   padding-top: 0.3rem;
 }
 .buttons {
@@ -209,5 +214,8 @@ export default {
 .iii {
   width: 3rem;
   margin: 0 auto;
+}
+.van-button{
+  font-size: 4.53333vw !important;
 }
 </style>
