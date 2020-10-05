@@ -19,6 +19,11 @@ const routes = [
     component: () => import('../views/home/Coach.vue'),
   },
   {
+    path: '/Search',
+    name: 'Search',
+    component: () => import('../views/main/Search.vue'),
+  },
+  {
     path: '/Calendar',
     name: 'Calendar',
     component: () => import('../views/home/Calendar.vue'),

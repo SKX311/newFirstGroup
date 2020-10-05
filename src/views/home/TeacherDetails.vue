@@ -190,7 +190,7 @@
       </van-tab>
     </van-tabs>
     
-    <van-button color="#EB6100">立即预约</van-button>
+    <van-button color="#EB6100" @click="make">立即预约</van-button>
   </div>
 </template>
 
@@ -221,6 +221,9 @@ export default {
       this.Show = true;
       this.isShow = false;
     },
+    make(){
+      this.$router.push({path:"/class_item"})
+    }
   
   },
 };

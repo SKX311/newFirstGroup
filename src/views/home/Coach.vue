@@ -4,7 +4,7 @@
     <div class="top">
       <p @click="back"><van-icon name="arrow-left" /></p>
       <p class="onetoone">一对一辅导</p>
-      <p><van-icon name="search" /></p>
+      <p><van-icon name="search" @click="toSearch"/></p>
     </div>
     <div class="top_select">
       <p>选择上课时间<i class="el-icon-caret-bottom"></i></p>
@@ -120,6 +120,12 @@ export default {
     methods:{
         back(){
             this.$router.go(-1)
+        },
+        make(){
+          this.$router.push({path:"/class_item"})
+        },
+        toSearch(){
+          this.$router.push({path:"/Search"})
         }
     }
 };

@@ -388,6 +388,12 @@ export default {
       },
       toCalendar(){
         this.$router.push({path:"/Calendar"})
+      },
+      toCourse(){
+        this.$router.push({path:"/Course"})
+      },
+      toClass_item(){
+        this.$router.push({path:"/CourseDetails"})
       }
   },
   mounted(){
