@@ -17,7 +17,26 @@ const routes = [
     path: '/Coach',
     name: 'Coach',
     component: () => import('../views/home/Coach.vue'),
+    redirect:"/Coachthree",
+    children:[
+      {
+        path: '/Coachone',
+        name: 'Coachone',
+        component: () => import('../views/home/Coachone.vue'),
+      },
+      {
+        path: '/Coachtwo',
+        name: 'Coachtwo',
+        component: () => import('../views/home/Coachtwo.vue'),
+      },
+      {
+        path: '/Coachthree',
+        name: 'Coachthree',
+        component: () => import('../views/home/Coachthree.vue'),
+      },
+    ]
   },
+  
   {
     path: '/Search',
     name: 'Search',
@@ -175,11 +194,9 @@ const routes = [
     component: () => import('../views/main/Login.vue'),
     meta: {
       showTabbar: false,
-<<<<<<< HEAD
-    },
-=======
     }
   },
+
   {
     path: '/RetrievePassword',
     name: 'RetrievePassword',
@@ -203,7 +220,6 @@ const routes = [
     meta: {
       showTabbar: false,
     }
->>>>>>> 3cef59b40da7ca70abf94039d91cc620eb446195
   }
 
 ]
