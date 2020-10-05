@@ -48,6 +48,7 @@
       </van-dropdown-item>
       <van-dropdown-item title="套卷状态">
         <div
+         close-on-click-overlay=true
           :class="['one_option', { one_option_active: active === index }]"
           v-for="(item, index) in list2"
           :key="index"
@@ -96,13 +97,13 @@ export default {
       this.index = key;
     },
     go(str) {
-      console.log(str);
+      // console.log(str);
       this.$router.push({
         path: str,
       });
     },
     changeindex(index) {
-      console.log(index);
+      // console.log(index);
       this.active = index;
     },
   },

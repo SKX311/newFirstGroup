@@ -164,15 +164,17 @@ const routes = [
         component: () => import('../views/exercise/practice_item/english.vue'),
       }
     ]
-  },{
+  }, {
     path: '/Login',
     name: 'Login',
     component: () => import('../views/main/Login.vue'),
     meta: {
       showTabbar: false,
-    }
+    },
   }
+
 ]
+
 
 const router = new VueRouter({
   mode: 'history',
