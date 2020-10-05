@@ -45,6 +45,21 @@ const routes = [
       showTabbar: true,
     }
   },
+  {
+    path: '/Coachone',
+    name: 'Coachone',
+    component: () => import('../views/record/Coachone.vue'),
+  },
+  {
+    path: '/Coachtwo',
+    name: 'Coachtwo',
+    component: () => import('../views/record/Coachtwo.vue'),
+  },
+  {
+    path: '/class_item',
+    name: 'class_item',
+    component: () => import('../views/record/class_item.vue'),
+  },
 ]
 
 const router = new VueRouter({
